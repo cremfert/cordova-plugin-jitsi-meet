@@ -53,7 +53,8 @@ public class JitsiPlugin extends CordovaPlugin implements JitsiMeetActivityInter
       String serverUrl = args.getString(0);
       String roomId = args.getString(1);
       Boolean audioOnly = args.getBoolean(2);
-      this.join(serverUrl, roomId, audioOnly, callbackContext);
+      String displayName = args.getString(3);
+      this.join(serverUrl, roomId, audioOnly, displayName, callbackContext);
       return true;
     } else if (action.equals("destroy")) {
       this.destroy(callbackContext);
@@ -103,7 +104,7 @@ public class JitsiPlugin extends CordovaPlugin implements JitsiMeetActivityInter
     }
   }
 
-  private void join(final String serverUrl, final String roomId, final Boolean audioOnly, final CallbackContext callbackContext) {
+  private void join(final String serverUrl, final String roomId, final Boolean audioOnly, final String displayName, final CallbackContext callbackContext) {
     Log.e(TAG, "join called! Server: " + serverUrl + ", room : " + roomId);
     
     cordova.getActivity().runOnUiThread(new Runnable() {
@@ -118,11 +119,15 @@ public class JitsiPlugin extends CordovaPlugin implements JitsiMeetActivityInter
             e.printStackTrace();
             throw new RuntimeException("Invalid server URL!");
         }
+
+        JitsiMeetUserInfo userInfo = new JitsiMeetUserInfo();
+        userInfo.setDisplayName(displayName);
         
         JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
           .setRoom(serverUrlObject.getProtocol() + "://" + serverUrlObject.getHost() + "/" + roomId)
           .setSubject(" ")
           .setAudioOnly(audioOnly)
+          .setUserInfo(userInfo)
           .setFeatureFlag("chat.enabled", false)
           .setFeatureFlag("invite.enabled", false)          
           .setFeatureFlag("calendar.enabled", false)

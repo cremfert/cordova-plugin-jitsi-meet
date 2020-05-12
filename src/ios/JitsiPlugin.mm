@@ -10,6 +10,7 @@ CDVPluginResult *pluginResult = nil;
     NSString* serverUrl = [command.arguments objectAtIndex:0];
     NSString* room = [command.arguments objectAtIndex:1];
     Boolean isAudioOnly = [[command.arguments objectAtIndex:2] boolValue];
+    NSString* displayName = [command.arguments objectAtIndex:3];
     commandBack = command;
     jitsiMeetView = [[JitsiMeetView alloc] initWithFrame:self.viewController.view.frame];
     jitsiMeetView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -21,6 +22,7 @@ CDVPluginResult *pluginResult = nil;
         builder.subject = @" ";
         builder.welcomePageEnabled = NO;
         builder.audioOnly = isAudioOnly;
+        builder.userInfo.displayName = displayName;
     }];
     
     [jitsiMeetView join: options];
