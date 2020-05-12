@@ -24,6 +24,7 @@ import org.jitsi.meet.sdk.JitsiMeetActivity;
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
 import org.jitsi.meet.sdk.JitsiMeetActivityDelegate;
 import org.jitsi.meet.sdk.JitsiMeetActivityInterface;
+import org.jitsi.meet.sdk.JitsiMeetUserInfo;
 import android.view.View;
 
 import org.apache.cordova.CordovaWebView;
@@ -122,7 +123,7 @@ public class JitsiPlugin extends CordovaPlugin implements JitsiMeetActivityInter
 
         JitsiMeetUserInfo userInfo = new JitsiMeetUserInfo();
         userInfo.setDisplayName(displayName);
-        
+
         JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
           .setRoom(serverUrlObject.getProtocol() + "://" + serverUrlObject.getHost() + "/" + roomId)
           .setSubject(" ")
