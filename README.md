@@ -3,8 +3,6 @@ Cordova plugin for Jitsi Meet SDK. Works with both iOS and Android, and fixes th
 
 Currently used version of Jitsi Meet SDK: **3.5.0**
 
-**NOTICE: It currently only supports running on devices, not simulators.**
-
 # Summary 
 This is based on the repo by findmate, but I updated the JitsiMeet SDK and WebRTC framework to the latest version, to get all features working in a Cordova app.
 The original repo is here: https://github.com/findmate/cordova-plugin-jitsi-meet
@@ -54,6 +52,3 @@ jitsiplugin.join('https://meet.jit.si/', roomId, false, 'My name', function (dat
     console.log(err);
 });
 ```
-
-# TODO
-* Make it work on iOS simulators
