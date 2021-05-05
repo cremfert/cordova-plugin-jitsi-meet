@@ -40,8 +40,8 @@
         <header-file src="src/ios/JitsiPlugin.h" />
         <source-file src="src/ios/JitsiPlugin.mm" />
 
-        <framework src="./framework/JitsiMeetSDK.framework" custom="true" />
-        <framework src="./framework/WebRTC.framework" custom="true" />
+        <framework src="./framework/JitsiMeetSDK.xcframework" custom="true" />
+        <framework src="./framework/WebRTC.xcframework" custom="true" />
 
     </platform>
 </plugin>
