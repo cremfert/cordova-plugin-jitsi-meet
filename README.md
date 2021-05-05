@@ -1,7 +1,7 @@
 # cordova-plugin-jitsi-meet
 Cordova plugin for Jitsi Meet SDK. Works with both iOS and Android, and fixes the 64-bit binary dependency issue with Android found in previous versions of this plugin.
 
-Current used version of Jitsi Meet SDK: **3.5.0**
+Currently used version of Jitsi Meet SDK: **3.5.0**
 
 **NOTICE: It currently only supports running on devices, not simulators.**
 
