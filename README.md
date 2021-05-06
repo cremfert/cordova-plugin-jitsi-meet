@@ -28,6 +28,7 @@ join(
 	errorCallback: function(error) {}
 )
 ```
+Success callback values are: ```CONFERENCE_FAILED, CONFERENCE_JOINED, CONFERENCE_LEFT, CONFERENCE_WILL_JOIN, CONFERENCE_TERMINATED, LOAD_CONFIG_ERROR```.
 
 ```
 destroy(
