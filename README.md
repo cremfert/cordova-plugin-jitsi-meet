@@ -43,6 +43,7 @@ const roomId = 'your-custom-room-id';
 
 jitsiplugin.join('https://meet.jit.si/', roomId, false, 'My name', function (data) {
     if (data === "CONFERENCE_TERMINATED") {
+    	// User has end call
         jitsiplugin.destroy(function (data) {
             // call finished
         }, function (err) {
